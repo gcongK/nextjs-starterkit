@@ -8,7 +8,11 @@
       "Bash(npm run *)",
       "Bash(echo \"PID: $!\")",
       "Bash(curl -s http://localhost:3000 -o /dev/null -w \"%{http_code}\")",
-      "Bash(npx eslint *)"
+      "Bash(npx eslint *)",
+      "Bash(node -e \"const pkg = require\\('./node_modules/next/package.json'\\); console.log\\(pkg.version\\)\")",
+      "Bash(node -e \"const pkg = require\\('./node_modules/react/package.json'\\); console.log\\(pkg.version\\)\")",
+      "Bash(node -e \"const pkg = require\\('./node_modules/tailwindcss/package.json'\\); console.log\\(pkg.version\\)\")",
+      "Bash(git -C /c/Users/82106/workspace/nextjs-starterkit remote get-url origin)"
     ]
   }
 }
