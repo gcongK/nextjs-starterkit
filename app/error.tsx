@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { AlertCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
@@ -25,7 +26,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
             다시 시도
           </Button>
           <Button variant="outline" className="flex-1" asChild>
-            <a href="/">홈으로</a>
+            <Link href="/">홈으로</Link>
           </Button>
         </div>
       </div>

@@ -5,7 +5,7 @@ import {
   Palette,
   Code2,
   ArrowRight,
-  LayoutDashboard,
+  Blocks,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -59,9 +59,9 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link href="/dashboard">
-                <LayoutDashboard className="mr-2 h-4 w-4" />
-                대시보드 보기
+              <Link href="/components">
+                <Blocks className="mr-2 h-4 w-4" />
+                컴포넌트 보기
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
@@ -123,11 +123,11 @@ export default function HomePage() {
               지금 바로 시작하세요
             </h2>
             <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-              회원가입 없이 대시보드를 먼저 둘러볼 수 있습니다.
+              포함된 모든 컴포넌트를 바로 확인하고 사용해보세요.
             </p>
             <Button size="lg" asChild>
-              <Link href="/dashboard">
-                대시보드 둘러보기
+              <Link href="/components">
+                컴포넌트 둘러보기
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
