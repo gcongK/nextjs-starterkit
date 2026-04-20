@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export function Footer() {
   return (
     <footer className="border-t bg-background py-6">
@@ -7,12 +9,12 @@ export function Footer() {
             © {new Date().getFullYear()} 스타터킷. All rights reserved.
           </p>
           <div className="flex gap-4 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">
+            <Link href="#" className="hover:text-foreground transition-colors">
               이용약관
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
+            </Link>
+            <Link href="#" className="hover:text-foreground transition-colors">
               개인정보처리방침
-            </a>
+            </Link>
           </div>
         </div>
       </div>

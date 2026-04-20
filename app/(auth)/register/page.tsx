@@ -23,7 +23,6 @@ export default function RegisterPage() {
   const onSubmit = async (data: RegisterFormValues) => {
     /* 실제 회원가입 로직 연결 필요 */
     await new Promise((resolve) => setTimeout(resolve, 1000))
-    console.log(data)
   }
 
   return (
@@ -46,10 +45,12 @@ export default function RegisterPage() {
               type="text"
               placeholder="홍길동"
               autoComplete="name"
+              aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? 'name-error' : undefined}
               {...register('name')}
             />
             {errors.name && (
-              <p className="text-sm text-destructive">{errors.name.message}</p>
+              <p id="name-error" role="alert" className="text-sm text-destructive">{errors.name.message}</p>
             )}
           </div>
           <div className="space-y-2">
@@ -59,10 +60,12 @@ export default function RegisterPage() {
               type="email"
               placeholder="name@example.com"
               autoComplete="email"
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'email-error' : undefined}
               {...register('email')}
             />
             {errors.email && (
-              <p className="text-sm text-destructive">{errors.email.message}</p>
+              <p id="email-error" role="alert" className="text-sm text-destructive">{errors.email.message}</p>
             )}
           </div>
           <div className="space-y-2">
@@ -71,10 +74,12 @@ export default function RegisterPage() {
               id="password"
               type="password"
               autoComplete="new-password"
+              aria-invalid={!!errors.password}
+              aria-describedby={errors.password ? 'password-error' : undefined}
               {...register('password')}
             />
             {errors.password && (
-              <p className="text-sm text-destructive">{errors.password.message}</p>
+              <p id="password-error" role="alert" className="text-sm text-destructive">{errors.password.message}</p>
             )}
           </div>
           <div className="space-y-2">
@@ -83,10 +88,12 @@ export default function RegisterPage() {
               id="confirmPassword"
               type="password"
               autoComplete="new-password"
+              aria-invalid={!!errors.confirmPassword}
+              aria-describedby={errors.confirmPassword ? 'confirmPassword-error' : undefined}
               {...register('confirmPassword')}
             />
             {errors.confirmPassword && (
-              <p className="text-sm text-destructive">{errors.confirmPassword.message}</p>
+              <p id="confirmPassword-error" role="alert" className="text-sm text-destructive">{errors.confirmPassword.message}</p>
             )}
           </div>
         </CardContent>

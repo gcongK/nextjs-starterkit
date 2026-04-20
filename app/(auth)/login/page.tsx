@@ -23,7 +23,6 @@ export default function LoginPage() {
   const onSubmit = async (data: LoginFormValues) => {
     /* 실제 인증 로직 연결 필요 */
     await new Promise((resolve) => setTimeout(resolve, 1000))
-    console.log(data)
   }
 
   return (
@@ -46,10 +45,12 @@ export default function LoginPage() {
               type="email"
               placeholder="name@example.com"
               autoComplete="email"
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'email-error' : undefined}
               {...register('email')}
             />
             {errors.email && (
-              <p className="text-sm text-destructive">{errors.email.message}</p>
+              <p id="email-error" role="alert" className="text-sm text-destructive">{errors.email.message}</p>
             )}
           </div>
           <div className="space-y-2">
@@ -66,10 +67,12 @@ export default function LoginPage() {
               id="password"
               type="password"
               autoComplete="current-password"
+              aria-invalid={!!errors.password}
+              aria-describedby={errors.password ? 'password-error' : undefined}
               {...register('password')}
             />
             {errors.password && (
-              <p className="text-sm text-destructive">{errors.password.message}</p>
+              <p id="password-error" role="alert" className="text-sm text-destructive">{errors.password.message}</p>
             )}
           </div>
         </CardContent>

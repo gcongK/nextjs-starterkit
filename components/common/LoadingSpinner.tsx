@@ -14,8 +14,11 @@ const sizeMap = {
 
 export function LoadingSpinner({ size = 'md', className }: LoadingSpinnerProps) {
   return (
-    <Loader2
-      className={cn('animate-spin text-muted-foreground', sizeMap[size], className)}
-    />
+    <span role="status" aria-label="로딩 중">
+      <Loader2
+        className={cn('animate-spin text-muted-foreground', sizeMap[size], className)}
+        aria-hidden="true"
+      />
+    </span>
   )
 }
